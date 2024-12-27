@@ -16,6 +16,13 @@ class DatabaseSeeder extends Seeder
             UtilitySeeder::class,
             EmailSMSTemplateSeeder::class,
             CurrencySeeder::class,
+            UserSeeder::class,
+            SettingsSeeder::class,
+            PaymentGatewaysSeeder::class,
+            PermissionsTableSeeder::class,
+            BranchSeeder::class,
+            LoanProductSeeder::class,
+            AccountTypeSeeder::class
         ]);
 
     }

@@ -31,6 +31,12 @@ class CurrencySeeder extends Seeder {
                 'base_currency' => 0,
                 'status'        => 1,
             ],
+            [
+                'name'          => 'GHS',
+                'exchange_rate' => 1,
+                'base_currency' => 0,
+                'status'        => 1,
+            ],
         ]);
     }
 }
