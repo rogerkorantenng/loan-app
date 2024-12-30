@@ -41,6 +41,17 @@
 								</select>
 							</div>
 						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label class="control-label">{{ _lang('Agent') }}</label>
+								<select class="form-control auto-select select2" data-selected="{{ old('agents_id') }}" name="agents_id" id="agents_id" required>
+									<option value="">{{ _lang('Select One') }}</option>
+									@foreach(\App\Models\Agent::all() as $agent)
+									<option value="{{ $agent->id }}">{{ $agent->full_name }}</option>
+									@endforeach
+								</select>
+							</div>
+						</div>
 
 						<div class="col-lg-6">
 							<div class="form-group">
@@ -90,7 +101,7 @@
 							@foreach($customFields as $customField)
 							<div class="{{ $customField->field_width }}">
 								<div class="form-group">
-									<label class="control-label">{{ $customField->field_name }}</label>	
+									<label class="control-label">{{ $customField->field_name }}</label>
 									{!! xss_clean(generate_input_field($customField)) !!}
 								</div>
 							</div>
@@ -140,7 +151,7 @@
 
 		if($(this).val() != ''){
 			var loanID = $(this).find(':selected').data('loan-id');
-			loanID != '' ? $("#loan_id").val(loanID) : 
+			loanID != '' ? $("#loan_id").val(loanID) :
 
 			Swal.fire({
 				text: "{{ _lang('Please set starting loan ID to your selected loan product before creating new loan!') }}",

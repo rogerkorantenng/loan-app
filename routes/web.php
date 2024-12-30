@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgentController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoanController;
@@ -167,6 +168,12 @@ Route::group(['middleware' => ['install']], function () {
                 Route::post('members/send_email', [MemberController::class, 'send_email'])->name('members.send_email');
                 Route::post('members/send_sms', [MemberController::class, 'send_sms'])->name('members.send_sms');
                 Route::resource('members', MemberController::class)->middleware("demo:PUT|PATCH|DELETE");
+
+                //Agent Controller
+                Route::get('agents/get_table_data', [AgentController::class, 'get_table_data']);
+                Route::get('agents/', [AgentController::class, 'index'])->name('agents.index');
+                Route::get('agents/create', [AgentController::class, 'create'])->name('agents.create');
+                Route::post('agents/store', [AgentController::class, 'store'])->name('agents.store');
 
                 //Custom Field Controller
                 Route::resource('custom_fields', CustomFieldController::class)->except(['index', 'show'])->middleware("demo");
