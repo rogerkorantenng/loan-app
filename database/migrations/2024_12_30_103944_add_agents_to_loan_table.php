@@ -12,6 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('loans', function (Blueprint $table) {
+            $table->unsignedBigInteger('agents_id')->after('id');
+
         });
     }
 
@@ -21,7 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('loans', function (Blueprint $table) {
-            //
+            $table->dropForeign(['agents_id']);
+            $table->dropColumn('agents_id');
         });
     }
 };
