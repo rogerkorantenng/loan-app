@@ -173,6 +173,7 @@ Route::group(['middleware' => ['install']], function () {
                 Route::get('agents/get_table_data', [AgentController::class, 'get_table_data']);
                 Route::get('agents/', [AgentController::class, 'index'])->name('agents.index');
                 Route::get('agents/create', [AgentController::class, 'create'])->name('agents.create');
+                Route::post('agents/store', [AgentController::class, 'store'])->name('agents.store');
 
                 //Custom Field Controller
                 Route::resource('custom_fields', CustomFieldController::class)->except(['index', 'show'])->middleware("demo");
