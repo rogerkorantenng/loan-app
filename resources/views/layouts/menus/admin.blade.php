@@ -18,7 +18,7 @@ $pending_loans = request_count('pending_loans', true);
 	<ul class="nav-second-level" aria-expanded="false">
 		<li class="nav-item"><a class="nav-link" href="{{ route('members.index') }}">{{ _lang('View Members') }}</a></li>
 		<li class="nav-item"><a class="nav-link" href="{{ route('members.create') }}">{{ _lang('Add Member') }}</a></li>
-		<li class="nav-item"><a class="nav-link" href="{{ route('members.import') }}">{{ _lang('Bulk Import') }}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('members.import') }}">{{ _lang('Bulk Import') }}</a></li>
 		<li class="nav-item"><a class="nav-link" href="{{ route('custom_fields.index', ['members']) }}">{{ _lang('Custom Fields') }}</a></li>
 		<li class="nav-item">
 			<a class="nav-link" href="{{ route('members.pending_requests') }}">
@@ -27,6 +27,15 @@ $pending_loans = request_count('pending_loans', true);
 			</a>
 		</li>
 	</ul>
+</li>
+
+<li>
+    <a href="javascript: void(0);"><i class="fas fa-user-friends"></i><span>{{ _lang('Agents') }}</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+    <ul class="nav-second-level" aria-expanded="false">
+        <li class="nav-item"><a class="nav-link" href="{{ route('agents.index') }}">{{ _lang('View Agents') }}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('agents.create') }}">{{ _lang('Add Agents') }}</a></li>
+
+    </ul>
 </li>
 
 <li>
