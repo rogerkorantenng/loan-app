@@ -41,6 +41,17 @@
 								</select>
 							</div>
 						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label class="control-label">{{ _lang('Agent') }}</label>
+								<select class="form-control auto-select select2" data-selected="{{ old('agent_id') }}" name="agent_id" id="agent_id" required>
+									<option value="">{{ _lang('Select One') }}</option>
+									@foreach(\App\Models\Agent::all() as $agent)
+									<option value="{{ $agent->id }}">{{ $agent->full_name }}</option>									
+									@endforeach
+								</select>
+							</div>
+						</div>
 
 						<div class="col-lg-6">
 							<div class="form-group">

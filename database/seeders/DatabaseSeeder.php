@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
             PermissionsTableSeeder::class,
             BranchSeeder::class,
             LoanProductSeeder::class,
-            AccountTypeSeeder::class
+            AccountTypeSeeder::class,
+            AgentSeeder::class
         ]);
 
     }

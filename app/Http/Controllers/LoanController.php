@@ -135,6 +135,7 @@ class LoanController extends Controller {
             'loan_id'                => 'required|unique:loans',
             'loan_product_id'        => 'required',
             'borrower_id'            => 'required',
+            'agent_id' => 'required',
             'currency_id'            => 'required',
             'first_payment_date'     => 'required',
             'release_date'           => 'required',
@@ -182,6 +183,7 @@ class LoanController extends Controller {
         $loan->loan_id                = $loanProduct->loan_id_prefix . $loanProduct->starting_loan_id;
         $loan->loan_product_id        = $request->input('loan_product_id');
         $loan->borrower_id            = $request->input('borrower_id');
+        $loan->agent_id = $request->input('agent_id');
         $loan->currency_id            = $request->input('currency_id');
         $loan->first_payment_date     = $request->input('first_payment_date');
         $loan->release_date           = $request->input('release_date');
