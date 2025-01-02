@@ -45,12 +45,14 @@ class PermissionController extends Controller {
             // if the action has the key 'controller'
             if (array_key_exists('controller', $action)) {
 
-                if(!isset($action['middleware'])){
-                    continue;
-                }
+                if (isset($action['middleware'])) {
+                    // Convert middleware to an array if it's a string
+                    $middlewares = is_array($action['middleware']) ? $action['middleware'] : explode(',', $action['middleware']);
 
-                if (!in_array("permission", $action['middleware'])) {
-                    continue;
+                    // Check if "permission" middleware is in the list
+                    if (!in_array("permission", $middlewares)) {
+                        continue;
+                    }
                 }
 
                 // explode the string with @ creating an array with a count of 2
